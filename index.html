@@ -1,369 +1,301 @@
-<html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style> 
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f3f3;
-      scroll-behavior: smooth;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANIL KUMAR BUDIGE - Portfolio</title>
+<meta name="description" content="Anil Kumar Budige's portfolio showcasing skills in mobile photography, photo and video editing.">
+<meta name="keywords" content="Anil Kumar Budige, portfolio, mobile photography, photo editing, video editing">
+<meta name="author" content="Anil Kumar Budige">
 
-    /* ----- Progress Bar ----- */
-    #progressContainer {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 6px;
-      background: #ddd;
-      z-index: 2000;
-    }
-    #progressBar {
-      height: 6px;
-      width: 0%;
-      background: linear-gradient(to right, #0899f3, #06c);
-      border-radius: 3px;
-    }
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f3f3;
+  scroll-behavior: smooth;
+}
 
-    /* ----- Header + Navbar ----- */
-    header {
-      background-color: #0899f3;
-      color: #0c0c0c;
-      padding: 10px 0;
-      text-align: center;
-      position: sticky;
-      top: 6px; /* stick below progress bar */
-      z-index: 1000;
-    }
-    header h1 {
-      margin: 10px 0;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #067bc2;
-      padding: 10px;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 20px;
-    }
-    nav ul li {
-      display: inline;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 8px 12px;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
-    nav ul li a:hover {
-      background: white;
-      color: #067bc2;
-    }
-    nav ul li a.active {
-      background: white;
-      color: #067bc2;
-    }
+/* Scroll progress bar */
+#progressContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: #ddd;
+  z-index: 2000;
+}
+#progressBar {
+  height: 6px;
+  width: 0%;
+  background: linear-gradient(to right, #0899f3, #06c);
+  border-radius: 3px;
+}
 
-    /* ----- Hamburger (mobile menu button) ----- */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      margin-left: auto;
-    }
-    .menu-toggle span {
-      width: 25px;
-      height: 3px;
-      background: white;
-      margin: 4px 0;
-      border-radius: 3px;
-    }
+/* Header + Navbar */
+header {
+  background-color: #0899f3;
+  color: #0c0c0c;
+  padding: 10px 0;
+  text-align: center;
+  position: sticky;
+  top: 6px;
+  z-index: 1000;
+}
+header h1 {
+  margin: 10px 0;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #067bc2;
+  padding: 10px;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+nav ul li {
+  display: inline;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+nav ul li a:hover { background: white; color: #067bc2; }
+nav ul li a.active { background: white; color: #067bc2; }
 
-    /* ----- Main Content ----- */
-    .container {
-      width: 80%;
-      margin: auto;
-      overflow: hidden;
-      padding-top: 20px;
-    }
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      display: block;
-      margin: 20px auto;
-    }
-    h1, h2, h3, h4 {
-      text-align: center;
-    }
-    .section {
-      background: #ffffff;
-      margin: 30px 0;
-      padding: 30px;
-      border-radius: 20px;
-    }
-    video {
-      display: block;
-      margin: 15px auto;
-      border: 2px solid #35424a;
-      border-radius: 8px;
-      max-width: 100%;
-      height: auto;
-    }
-    ul {
-      list-style-type: disc;
-      text-align: left;
-      margin-left: 20%;
-    }
-    a {
-      color: #0899f3;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+/* Hamburger for mobile */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto;
+}
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  border-radius: 3px;
+}
 
-    /* ----- Footer ----- */
-    footer {
-      text-align: center;
-      padding: 10px 0;
-      background-color: #35424a;
-      color: #ffffff;
-      width: 100%;
-    }
+/* Main content */
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  padding-top: 20px;
+}
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: block;
+  margin: 20px auto;
+  object-fit: cover;
+}
+h1,h2,h3,h4 { text-align: center; }
+.section {
+  background: #ffffff;
+  margin: 30px 0;
+  padding: 30px;
+  border-radius: 20px;
+}
+video {
+  display: block;
+  margin: 15px auto;
+  border: 2px solid #35424a;
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+ul {
+  list-style-type: disc;
+  text-align: left;
+  margin-left: 20%;
+}
+a { color: #0899f3; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-    /* ----- Back to Top Button (Animated) ----- */
-    #backToTop {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 99;
-      font-size: 20px;
-      border: none;
-      outline: none;
-      background-color: #0899f3;
-      color: white;
-      cursor: pointer;
-      padding: 15px;
-      border-radius: 50%;
-      box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
-      transition: 0.3s;
-    }
-    #backToTop:hover {
-      background-color: #067bc2;
-    }
-    #backToTop span {
-      display: inline-block;
-      animation: bounce 1s infinite;
-    }
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-6px);
-      }
-    }
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #35424a;
+  color: #ffffff;
+  width: 100%;
+}
 
-    /* ----- Responsive Design ----- */
-    @media (max-width: 768px) {
-      .container {
-        width: 95%;
-      }
-      .profile-img {
-        width: 120px;
-        height: 120px;
-      }
-      ul {
-        margin-left: 10%;
-      }
-      .section {
-        padding: 20px;
-      }
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background: #067bc2;
-        width: 100%;
-        padding: 10px 0;
-      }
-      nav ul.show {
-        display: flex;
-      }
-      .menu-toggle {
-        display: flex;
-      }
-    }
+/* Back-to-top */
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: #0899f3;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+#backToTop:hover { background-color: #067bc2; }
+#backToTop span {
+  display: inline-block;
+  animation: bounce 1s infinite;
+}
+@keyframes bounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-6px);} }
 
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 22px;
-      }
-      h2 {
-        font-size: 18px;
-      }
-      .profile-img {
-        width: 100px;
-        height: 100px;
-      }
-      ul {
-        margin-left: 5%;
-      }
-      .section {
-        padding: 15px;
-      }
-    }
-  </style>
+/* Responsive */
+@media (max-width: 768px) {
+  .container { width: 95%; }
+  .profile-img { width: 120px; height: 120px; }
+  ul { margin-left: 10%; }
+  .section { padding: 20px; }
+  nav ul { display: none; flex-direction: column; background: #067bc2; width: 100%; padding: 10px 0; }
+  nav ul.show { display: flex; }
+  .menu-toggle { display: flex; }
+}
+@media (max-width: 480px) {
+  h1 { font-size: 22px; }
+  h2 { font-size: 18px; }
+  .profile-img { width: 100px; height: 100px; }
+  ul { margin-left: 5%; }
+  .section { padding: 15px; }
+}
+</style>
 </head>
-<body> 
+<body>
 
-  <!-- Progress Bar -->
-  <div id="progressContainer">
-    <div id="progressBar"></div>
-  </div>
+<!-- Scroll progress bar -->
+<div id="progressContainer"><div id="progressBar"></div></div>
 
-  <!-- Header + Navbar -->
-  <header>
-    <h1>My Portfolio</h1>
-    <nav>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul id="menu">
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#apps">Applications</a></li>
-        <li><a href="#videos">Videos</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- Header + Navbar -->
+<header>
+<h1>My Portfolio</h1>
+<nav>
+  <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  <ul id="menu">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#apps">Applications</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+</header>
 
-  <div class="container">
-    <img src="WhatsApp Image 2025-09-08 at 14.07.06_784263ca.jpg" alt="Profile Picture" class="profile-img">
-    <h1>ANIL KUMAR BUDIGE</h1>
-    
-    <main>
-      <div class="section" id="skills">
-        <h2>My Skills</h2>
-        <ul>
-          <li>Passionate in mobile photography & videography</li>
-          <li>Mobile editor</li>
-          <li>Photo editing</li>
-          <li>Video editing</li>
-        </ul>
-      </div>
+<div class="container">
+<img src="WhatsApp Image 2025-09-08 at 14.07.06_784263ca.jpg" alt="Profile Picture" class="profile-img">
+<h1>ANIL KUMAR BUDIGE</h1>
 
-      <div class="section" id="apps">
-        <h2>Applications</h2>
-        <h3>Photo editing applications</h3>
-        <ul>
-          <li>Picsart</li>
-          <li>Lightroom</li>
-          <li>Snapseed</li>
-          <li>Canva</li>
-        </ul>
-        <h4>Video editing applications</h4>
-        <ul>
-          <li>Kinemaster</li>
-          <li>VN & Inshot</li>
-        </ul>
-      </div>
+<main>
+<div class="section" id="skills">
+<h2>My Skills</h2>
+<ul>
+<li>Passionate in mobile photography & videography</li>
+<li>Mobile editor</li>
+<li>Photo editing</li>
+<li>Video editing</li>
+</ul>
+</div>
 
-      <div class="section" id="videos">
-        <h2>My Video Edits</h2>
-        <h3>First Video</h3>
-        <video controls>
-          <source src="edit1.mp4" type="video/mp4">
-          Your browser does not support HTML video.
-        </video>
+<div class="section" id="apps">
+<h2>Applications</h2>
+<h3>Photo editing applications</h3>
+<ul>
+<li>Picsart</li>
+<li>Lightroom</li>
+<li>Snapseed</li>
+<li>Canva</li>
+</ul>
+<h4>Video editing applications</h4>
+<ul>
+<li>Kinemaster</li>
+<li>VN & Inshot</li>
+</ul>
+</div>
 
-        <h4>Second Video</h4>
-        <video controls>
-          <source src="edit2.mp4" type="video/mp4">
-        </video>
+<div class="section" id="videos">
+<h2>My Video Edits</h2>
+<h3>First Video</h3>
+<video controls>
+  <source src="edit1.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
 
-        <h4>Third Video</h4>
-        <video controls>
-          <source src="edit3.mp4" type="video/mp4"> 
-        </video>
-      </div>
+<h4>Second Video</h4>
+<video controls>
+  <source src="edit2.mp4" type="video/mp4">
+</video>
 
-      <div class="section" id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:anilbudige01@gmail.com">anilbudige01@gmail.com</a></p>
-        <p>Phone: <a href="tel:9640591027">9640591027</a></p>
-      </div>
-    </main>
-  </div>
+<h4>Third Video</h4>
+<video controls>
+  <source src="edit3.mp4" type="video/mp4">
+</video>
+</div>
 
-  <footer>
-    <p>© 2025 ANIL KUMAR. All rights reserved.</p>
-  </footer>
+<div class="section" id="contact">
+<h2>Contact</h2>
+<p>Email: <a href="mailto:anilbudige01@gmail.com">anilbudige01@gmail.com</a></p>
+<p>Phone: <a href="tel:9640591027">9640591027</a></p>
+</div>
+</main>
+</div>
 
-  <!-- Back to Top Button -->
-  <button onclick="scrollToTop()" id="backToTop"><span>↑</span></button>
+<footer>
+<p>© 2025 ANIL KUMAR. All rights reserved.</p>
+</footer>
 
-  <!-- Scripts -->
-  <script>
-    // Mobile menu toggle
-    function toggleMenu() {
-      document.getElementById("menu").classList.toggle("show");
-    }
+<!-- Back-to-top -->
+<button onclick="scrollToTop()" id="backToTop"><span>↑</span></button>
 
-    // Back to Top button show/hide + Progress bar update
-    const backToTopBtn = document.getElementById("backToTop");
-    const progressBar = document.getElementById("progressBar");
+<script>
+// Toggle mobile menu
+function toggleMenu(){ document.getElementById("menu").classList.toggle("show"); }
 
-    window.onscroll = function() {
-      // Show back-to-top button
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        backToTopBtn.style.display = "block";
-      } else {
-        backToTopBtn.style.display = "none";
-      }
+// Back-to-top + progress bar + active section
+const backToTopBtn = document.getElementById("backToTop");
+const progressBar = document.getElementById("progressBar");
+const sections = document.querySelectorAll(".section");
+const navLinks = document.querySelectorAll("nav ul li a");
 
-      // Progress bar calculation
-      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      let scrolled = (winScroll / height) * 100;
-      progressBar.style.width = scrolled + "%";
+window.onscroll = function() {
+  // Show back-to-top
+  if(document.body.scrollTop>200 || document.documentElement.scrollTop>200) backToTopBtn.style.display="block";
+  else backToTopBtn.style.display="none";
 
-      highlightActiveLink();
-    };
+  // Progress bar
+  let winScroll=document.body.scrollTop||document.documentElement.scrollTop;
+  let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+  let scrolled=(winScroll/height)*100;
+  progressBar.style.width=scrolled+"%";
 
-    // Scroll to top
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+  // Highlight active nav link
+  let index = sections.length;
+  while(--index && window.scrollY + 150 < sections[index].offsetTop) {}
+  navLinks.forEach(link => link.classList.remove("active"));
+  navLinks[index]?.classList.add("active");
+};
 
-    // Highlight active navbar link
-    const sections = document.querySelectorAll(".section");
-    const navLinks = document.querySelectorAll("nav ul li a");
-
-    function highlightActiveLink() {
-      let index = sections.length;
-      while (--index && window.scrollY + 150 < sections[index].offsetTop) {}
-      navLinks.forEach((link) => link.classList.remove("active"));
-      navLinks[index]?.classList.add("active");
-    }
-    highlightActiveLink();
-  </script>
+function scrollToTop(){ window.scrollTo({top:0,behavior:"smooth"}); }
+</script>
 
 </body>
 </html>
+
